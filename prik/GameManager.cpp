@@ -146,6 +146,12 @@ void GameManager::processKeyboardInput() {
                 player.hiding();
                 helicopter.driving();
                 keyPressedF = true;
+                if (isHelicopter) {
+                    if (helicopter.side)
+                        screenposX = helicopter.posX + 14 - 60;
+                    else
+                        screenposX = helicopter.posX - 14 - 60;
+                }
             }
         }
     }
@@ -171,9 +177,9 @@ void GameManager::manualmode() {
     else {
         if (isHelicopter) {
             if (helicopter.side)
-                player.posX = helicopter.posX + 8;
+                player.posX = helicopter.posX + 14;
             else
-                player.posX = helicopter.posX - 8;
+                player.posX = helicopter.posX - 14;
             helicopter.processKeyboardInput();
         }
     }

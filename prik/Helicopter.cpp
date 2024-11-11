@@ -537,13 +537,13 @@ void Helicopter::processKeyboardInput() {
             if (!side)
              posX -= 44;
             side = true;
-            posX = max(1, posX - 2);
+            posX = max(40, posX - 2);
         }
         if (GetAsyncKeyState(VK_RIGHT)) {
             if(side)
                 posX += 44;
             side = false;
-            posX = min(360, posX + 2);
+            posX = min(315, posX + 2);
         }
         if (GetAsyncKeyState(VK_DOWN) or GetAsyncKeyState(0x53)) {
             posY = min(30, posY + 1);
